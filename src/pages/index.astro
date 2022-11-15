@@ -1,21 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 ---
 
 <Layout title="XS Next Lab">
 	<main>
-		<div class="grid md:grid-rows-2 gap-2">
-			<img src="/assets/logo-animated.gif" alt="" />
-			<h1 class="text-4xl">Welcome to XS Next Lab</h1>	
+		<div class="grid grid-flow-col sm:grid-cols-2 grid-cols-1 items-center gap-0">
+			<div class="p-8 m-0">
+				<img src="/assets/logo-animated.gif" alt="" />
+			</div>
+			<div class="p-8 bg-slate-700 m-0">
+				<h1 class="text-8xl align-middle font-bold">Welcome to XS Next Lab</h1>	
+			</div>
 		</div>
-		<summary>
-			<p>XS Next Lab jumpstarts students' interests in the realm of computer programming.</p>
-
-			<p>It is the official coding club of Xavier School of San Juan, a private Catholic Filipino-Chinese school.</p>
-
-			<p> Here in XS Next Lab, we focus on four different categories: web development, app development, robotics, and Python!</p>
-		</summary>
+		<article class="p-8">
+			<summary>
+				<p>XS Next Lab jumpstarts students' interests in the realm of computer programming.</p>
+				<br>
+				<p>It is the official coding club of Xavier School of San Juan, a private Catholic Filipino-Chinese school.</p>
+				<br>
+				<p> Here in XS Next Lab, we focus on four different categories: web development, app development, robotics, and Python!</p>
+			</summary>
+		</article>
 	</main>
 </Layout>
-</style>
