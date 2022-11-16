@@ -1,0 +1,69 @@
+---
+
+const Pages = [
+	{
+		label: 'Home',
+		url: '/',
+	},
+	{
+		label: 'About',
+		url: '/about'
+	}
+]
+
+---
+
+<style>
+nav {
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height 0.25s cubic-bezier(1,0,1,0);
+}
+
+nav.open {
+	max-height: 500px;
+	transition: max-height 0.25s cubic-bezier(1,0,1,0);
+}
+</style>
+
+
+<div class="flex p-2 flex-row-reverse md:hidden">
+	<button id="top-nav-toggle"><img class="w-8 h-8" src="/assets/icons/menu.svg"></button>
+</div>
+<nav class="md:max-h-full max-h-0" id="top-nav" style="transition: max-height 0.5s ease-in-out">	
+  <ul class="flex flex-col md:flex-row gap-6 p-4">
+		{
+			Pages.map(page => {
+				return (
+					<li class="md:px-8 md:rounded-lg md:bg-slate-800 md:hover:bg-slate-700 md:p-2 ">
+						<a href={page.url}>{page.label}</a>
+					</li>
+				)
+			})
+		}
+	</ul>
+</nav>
+
+<script>
+	let menu = false
+	
+	const nav = document.getElementById('top-nav')
+	const navToggle = document.getElementById('top-nav-toggle')
+
+	function toggleMenu() {
+		menu = !menu
+
+		if (nav && menu == true) {
+			nav.classList.add('open')
+		}
+
+		if (nav && menu == false) {
+			nav.classList.remove('open')
+		}
+	}
+
+	if (navToggle) {
+		navToggle.onclick = toggleMenu
+	}
+
+</script>
