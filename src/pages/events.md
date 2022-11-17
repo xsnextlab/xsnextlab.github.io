@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/mainLayout.astro
+layout: ../layouts/article.astro
 title: Events | XS Next Lab
 ---
 # XS Next Lab Events

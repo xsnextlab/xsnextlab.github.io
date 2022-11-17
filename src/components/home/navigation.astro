@@ -31,15 +31,15 @@ nav.open {
 </style>
 
 
-<div class="flex p-2 flex-row-reverse md:hidden">
+<div class="flex p-2 flex-row-reverse sm:hidden">
 	<button id="top-nav-toggle"><img class="w-8 h-8" src="/assets/icons/menu.svg"></button>
 </div>
-<nav class="md:max-h-full max-h-0" id="top-nav" style="transition: max-height 0.5s ease-in-out">	
-  <ul class="flex flex-col md:flex-row gap-6 p-4">
+<nav class="sm:max-h-full max-h-0" id="top-nav" style="transition: max-height 0.5s ease-in-out">	
+  <ul class="flex flex-col sm:flex-row gap-6 p-4">
 		{
 			Pages.map(page => {
 				return (
-					<li class="md:px-8 md:rounded-lg md:bg-slate-800 md:hover:bg-slate-700 md:p-2 ">
+					<li class="sm:px-8 sm:rounded-lg sm:bg-slate-800 sm:hover:bg-slate-700 sm:p-2 ">
 						<a href={page.url}>{page.label}</a>
 					</li>
 				)
