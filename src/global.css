@@ -3,10 +3,10 @@
 @tailwind components;
 
 @layer base {
-    h1 {
-        @apply text-4xl font-bold;
-    }
-    article {
-        @apply p-4;
-    }
+	h1 {
+		@apply text-4xl font-bold mb-8;
+	}
+	article {
+		@apply p-4;
+	}
 }
