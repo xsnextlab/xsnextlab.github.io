@@ -2,7 +2,13 @@
 module.exports = {
   content: ["./src/**/*.{astro,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        blue: {
+          1000: '#1c2a6a'
+        }
+      }
+    },
   },
   plugins: [require("daisyui")],
 };
