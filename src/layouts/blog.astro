@@ -5,8 +5,12 @@ export interface Frontmatter {
 	title: string
 	author: string
 	date: string
+	image?: string
+	draft?: boolean
 }
-const { title, author, date } = Astro.props.frontmatter
+const { title, author } = Astro.props.frontmatter
+new Date()
+const date = new Date(Astro.props.frontmatter.date).toLocaleDateString()
 ---
 
 <MainLayout title={title + ' | XS Next Lab Blog'}>
