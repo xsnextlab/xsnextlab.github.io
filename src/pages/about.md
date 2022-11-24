@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/mainLayout.astro
+layout: ../layouts/article.astro
 title: About | XS Next Lab
 ---
 

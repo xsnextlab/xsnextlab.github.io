@@ -1,0 +1,27 @@
+---
+import Icon from '../common/icon.astro'
+
+export interface Props {
+    title: string
+    date: string
+    author: string
+    summary: string
+    url: string
+    image?: string
+}
+
+const {title, author, summary, image, url} = Astro.props
+const date = new Date(Astro.props.date).toLocaleDateString()
+---
+<a href={url} class="flex flex-col p-0 bg-slate-300 dark:bg-slate-700 rounded-md">
+    {image && <img src={image} class="w-full h-16 object-none object-center" />}
+    <h1 class="font-bold text-xl p-4 mb-0">{title}</h1>
+    <div class="flex flex-row gap-2 p-4">
+        <Icon icon="icons/person" _class="w-6 h-6 self-end" />
+        <div class="self-end">{author}</div>
+        <Icon icon="icons/calendar" _class="w-6 h-6 self-end" />
+        <div class="self-end">{date}</div>
+    </div>
+    <hr />
+    <summary class="p-4">{summary.split(' ').filter((v,i) => i < 25).join(' ')}</summary>
+</a>

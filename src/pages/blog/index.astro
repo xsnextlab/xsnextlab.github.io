@@ -1,0 +1,21 @@
+---
+import MainLayout from "../../layouts/mainLayout.astro";
+import type { Frontmatter } from "../../layouts/blog.astro";
+import BlogCard from "../../components/blog/blogCard.astro";
+
+const posts = await Astro.glob<Frontmatter>('./*.{md,mdx}')
+---
+
+<MainLayout title="Blog | XS Next Lab">
+    <div class="p-8">
+        <h1>XS Next Lab Blog</h1>
+        <p class="mb-8">Here you can find articles about anything important happening in XS Next Lab</p>
+        <div class="grid grid-flow-col grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+            {
+                posts.filter(post => !post.frontmatter.draft).map(post => {
+                   return !post.draft && <BlogCard title={post.frontmatter.title} date={post.frontmatter.date} author={post.frontmatter.author} image={post.frontmatter.image} summary={post.frontmatter.summary} url={post.url} /> 
+                })
+            }
+        </div>
+    </div>
+</MainLayout>

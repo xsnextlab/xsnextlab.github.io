@@ -1,0 +1,15 @@
+---
+export interface Props {
+    icon: string
+    _class?: string
+    style?: string
+}
+
+ const {icon, _class, style} = Astro.props
+
+---
+<div>
+    <img id={`${icon}-light`} src={`/assets/${icon}-light.svg`} class={_class} style={style}>
+    <img id={`${icon}-dark`} src={`/assets/${icon}-dark.svg`} class={_class} style={style} hidden>
+</div>
+

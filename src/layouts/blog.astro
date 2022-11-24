@@ -1,0 +1,31 @@
+---
+import Icon from '../components/common/icon.astro'
+import MainLayout from './mainLayout.astro'
+export interface Frontmatter {
+	title: string
+	author: string
+	date: string
+	image?: string
+	draft?: boolean
+}
+const { title, author } = Astro.props.frontmatter
+new Date()
+const date = new Date(Astro.props.frontmatter.date).toLocaleDateString()
+---
+
+<MainLayout title={title + ' | XS Next Lab Blog'}>
+	<div class="p-8">
+		<h1>{title}</h1>
+		<div class="mb-4">
+			<div class="flex flex-row gap-2">
+				<Icon icon="icons/person" _class="w-6 h-6 self-end" />
+				<div class="self-end">{author}</div>
+				<Icon icon="icons/calendar" _class="w-6 h-6 self-end" />
+				<div class="self-end">{date}</div>
+			</div>
+		</div>
+		<article class="p-0">
+			<slot />
+		</article>
+	</div>
+</MainLayout>
